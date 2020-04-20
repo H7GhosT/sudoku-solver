@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku solver</title>
+    <link rel="shortcut icon" type="image/ico" href="./favicon.ico" />
+
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./plugins/pickr.min.css" />
+
+    <script src="./plugins/pickr.min.js"></script>
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"
+    /> -->
+
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"
+      defer
+    ></script> -->
+
+    <script src="./js/Toast.js"></script>
+    <script src="./js/utils.js"></script>
+
+    <script src="./js/SudokuBoard.js"></script>
+    <script src="./js/SudokuCell.js"></script>
+    <script src="./js/sudokuSolver.js" defer></script>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="sudoku-board-wrapper">
+        <div class="title">
+          Sudoku solver
+          <div class="subtitle">Let's try to solve your problem</div>
+        </div>
+        <div class="sudoku-board" id="sudoku-board"></div>
+        <div class="slider-wrapper">
+          <img src="./img/speedmeter.png" alt="speedmeter_icon" />
+          <input
+            class="slider"
+            type="range"
+            id="speed-input"
+            min="0"
+            max="400"
+          />
+        </div>
+        <div class="picker-wrapper">
+          <span>Color</span>
+          <button id="color-picker"></button>
+        </div>
+        <div class="action-wrapper">
+          <button class="btn" id="solve-btn">Solve</button>
+          <button class="btn" id="cancel-btn">Cancel</button>
+          <button class="btn" id="clear-btn">Clear</button>
+        </div>
+      </div>
+    </div>
+    <div id="toast-wrapper"></div>
+  </body>
+</html>
