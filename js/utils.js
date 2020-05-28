@@ -30,7 +30,7 @@ async function flareEffect($elem, className = "red-bg", duration = 200) {
   $elem.classList.remove(className);
 }
 
-async function toast(message, duration = 6000) {
+async function toast(message, duration = 5000) {
   const t = new Toast();
 
   t.show(message);

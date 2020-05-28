@@ -41,7 +41,7 @@ function sudokuSolver(sudokuBoard) {
         for (let c = 0; c < SIZE; c++, i++) {
           const val = sudokuBoard.cells[i].value;
           if (!config.isSolving) return false;
-          if (val !== SudokuCell.NULL_VALUE) continue;
+          if (val !== SudokuCell.NULL) continue;
           if (forbCols.has(c)) continue;
           if (forbSubBoards.has(get1dCoord(floor(r / 3), floor(c / 3), 3)))
             continue;
@@ -52,7 +52,7 @@ function sudokuSolver(sudokuBoard) {
 
           if (await makeChange(n, r + 1)) return true;
 
-          sudokuBoard.cells[i].value = SudokuCell.NULL_VALUE;
+          sudokuBoard.cells[i].value = SudokuCell.NULL;
           removeForbPos(n, r, c);
         }
         if (!forbRows.has(r)) return false;
@@ -93,7 +93,7 @@ function sudokuSolver(sudokuBoard) {
       for (let i = 0; i < SIZE ** 2; i++) {
         const n = sudokuBoard.cells[i].value;
 
-        if (n !== SudokuCell.NULL_VALUE) {
+        if (n !== SudokuCell.NULL) {
           const { row, col } = get2dCoords(i, SIZE);
           addForbPos(n, row, col);
         }

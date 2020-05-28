@@ -125,11 +125,6 @@
   font-size: 24px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 12px;
-}
-
 .action-wrapper {
   position: absolute;
   top: calc(100% + 10px);

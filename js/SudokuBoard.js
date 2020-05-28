@@ -51,7 +51,7 @@ class SudokuBoard {
 
       for (const dir of directions) {
         const i = get1dCoord(row + dir[0], col + dir[1], SIZE);
-        this.cells[i] && (this.cells[i].value = SudokuCell.NULL_VALUE);
+        this.cells[i] && (this.cells[i].value = SudokuCell.NULL);
         this.cells[i]?.upDown();
         if (!this.cells[i] || this.cells[i].visited) continue;
         this.cells[i].visited = true;
@@ -60,7 +60,7 @@ class SudokuBoard {
       return Promise.resolve();
     };
 
-    this.cells[get1dCoord(4, 4, SIZE)].value = SudokuCell.NULL_VALUE;
+    this.cells[get1dCoord(4, 4, SIZE)].value = SudokuCell.NULL;
 
     bfs(4, 4);
     await delay(_delay * 24);
@@ -88,7 +88,7 @@ class SudokuBoard {
       if (rowSet.has(v)) {
         return false;
       }
-      if (v != SudokuCell.NULL_VALUE) rowSet.add(v);
+      if (v != SudokuCell.NULL) rowSet.add(v);
     }
     return true;
   }
@@ -102,7 +102,7 @@ class SudokuBoard {
       if (colSet.has(v)) {
         return false;
       }
-      if (v != SudokuCell.NULL_VALUE) colSet.add(v);
+      if (v != SudokuCell.NULL) colSet.add(v);
     }
     return true;
   }
@@ -116,7 +116,7 @@ class SudokuBoard {
       if (subBoardSet.has(v)) {
         return false;
       }
-      if (v != SudokuCell.NULL_VALUE) subBoardSet.add(v);
+      if (v != SudokuCell.NULL) subBoardSet.add(v);
     }
     return true;
   }

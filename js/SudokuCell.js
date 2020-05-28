@@ -1,8 +1,8 @@
 class SudokuCell {
-  static NULL_VALUE = 0;
+  static NULL = 0;
   static MIN = 1;
   static MAX = 9;
-  constructor(initialValue = SudokuCell.NULL_VALUE) {
+  constructor(initialValue = SudokuCell.NULL) {
     const $input = document.createElement("input");
     $input.type = "text";
     $input.classList.add("sudoku-cell");
@@ -39,7 +39,7 @@ class SudokuCell {
   }
   set value(val) {
     const newVal = SudokuCell.validateNum(val);
-    if (newVal == SudokuCell.NULL_VALUE) this.$input.value = "";
+    if (newVal == SudokuCell.NULL) this.$input.value = "";
     else {
       this.$input.value = newVal;
     }
@@ -64,8 +64,8 @@ class SudokuCell {
   }
   static validateNum(num) {
     num = parseInt(num);
-    if (isNaN(num)) return SudokuCell.NULL_VALUE;
+    if (isNaN(num)) return SudokuCell.NULL;
     if (num >= SudokuCell.MIN && num <= SudokuCell.MAX) return num;
-    else return SudokuCell.NULL_VALUE;
+    else return SudokuCell.NULL;
   }
 }
